@@ -1,0 +1,36 @@
+<html ng-app='swankyChat' ng-cloak='true'>
+  <head>
+  <link href="./static/chat.css" rel="stylesheet">
+</head>
+  <div class='container'>
+    <div class='inbox'>
+      <aside>
+        <ul ng-controller='chatCtrl as chat'>
+          <div ng-repeat='chat in chats'>
+            <li ng-click='uid(chat.id)'>
+              <img class='avatar' src='https://resources.workable.com/wp-content/uploads/2018/09/How-to-hire-your-first-HR-person-thumb.png'>
+              <p class='username'>HR Manager</p>
+            </li>
+          </div>
+        </ul>
+      </aside>
+      <main ng-controller='chatCtrl as chat'>
+        <div class='init'>
+          <i class='fa fa-inbox'></i>
+          <h4>Chat with your HR Manager</h4>
+        </div>
+        <div class='loader'>
+          <p></p>
+          <h4>Loading</h4>
+        </div>
+        <footer>
+          <form ng-submit='add()'>
+            <input ng-model='text' placeholder='Enter a message' type='text'>
+            <input type='submit' value='Send'>
+          </form>
+        </footer>
+      </main>
+    </div>
+  </div>
+</html>
+
